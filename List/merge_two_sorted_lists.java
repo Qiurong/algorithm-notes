@@ -23,7 +23,7 @@ public class merge_two_sorted_lists {
             }
             //这边||是精华，两者只要有一个不为空，就新建next结点
             //两者皆空，则不新建节点
-            //若两者只有一个不为空,则在后面吧不为空的连表连接上去
+            //若两者一个为空一个不为空的情况下(两者初始都不为空),新建了curr.next且curr为一个待赋值的元素
             if(l1 != null || l2 != null){
                 curr.next = new ListNode();
                 curr = curr.next;
@@ -48,4 +48,39 @@ public class merge_two_sorted_lists {
         }
         return head;
     }
+    //思考总结: 这题其实可以用不到O(n)的时间复杂度去完成.
+    // 主要问题在于: 1.链表的构造与赋值不熟悉(curr.next什么时候构造,循环赋值容易出现空指针或者最后多出一个元素)
+    //             2.l1/l2剩余元素赋值不需要遍历，但单纯curr = l1/l2又不对
+    //再次尝试第二次版本
+    public ListNode mergeTwoLists_secondEdition(ListNode l1, ListNode l2){
+        //针对l1 l2不都为非空的小trick
+        if(l1 == null){
+            return l2;
+        }else if(l2 == null){
+            return l1;
+        }
+        //这里使用dummyNode作为head前一个元素，最后返回dummyNode.next
+        ListNode dummyNode = new ListNode();
+        ListNode curr = dummyNode;
+        while(l1 != null && l2 != null){
+            curr.next = new ListNode();
+            curr = curr.next;
+            if(l1.val < l2.val){
+                curr.val = l1.val;
+                l1 = l1.next;
+            }else{
+                curr.val = l2.val;
+                l2 = l2.next;
+            }
+        }
+        if(l1 != null){
+            curr.next = l1;
+        }
+        if(l2 != null){
+            curr.next = l2;
+        }
+        return dummyNode.next;
+    }
+    //思考总结: 这次优化了算法, 能让l1和l2剩余的链表直接连上去(不在需要遍历), 但执行速度还不是最优解...
+
 }
