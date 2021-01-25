@@ -81,6 +81,39 @@ public class merge_two_sorted_lists {
         }
         return dummyNode.next;
     }
-    //思考总结: 这次优化了算法, 能让l1和l2剩余的链表直接连上去(不在需要遍历), 但执行速度还不是最优解...
+    //思考总结: 这次优化了算法, 能让l1和l2剩余的链表直接连上去(不在需要遍历), 但执行速度还不是最优解...没考虑到只有一个非空的情况下直接链接就好
+
+    //迭代解决问题,相比于我自己的第二版写的更加简洁
+    public ListNode mergeTwoListsWithIteration(ListNode l1, ListNode l2){
+        ListNode dummyNode = new ListNode();
+        ListNode curr = dummyNode;
+        while(l1 != null && l2 != null){
+            if(l1.val < l2.val){
+                curr.next = l1;
+                l1 = l1.next;
+            }else{
+                curr.next = l2;
+                l2 = l2.next;
+            }
+            curr = curr.next;
+        }
+        curr.next = l1 == null ? l2 : l1;
+        return dummyNode.next;
+    }
+
+    //递归解决该问题
+    public ListNode mergeTwoListsWithRecursion(ListNode l1, ListNode l2){
+        if(l1 == null){
+            return l2;
+        } else if (l2 == null) {
+            return l1;
+        }else if(l1.val < l2.val){
+            l1.next = mergeTwoListsWithRecursion(l1.next,l2);
+            return l1;
+        }else{
+            l2.next = mergeTwoListsWithRecursion(l1, l2.next);
+            return l2;
+        }
+    }
 
 }
