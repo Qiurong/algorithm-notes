@@ -1,5 +1,7 @@
 package List;
 
+import java.util.List;
+
 /**
  * @description: 给你链表的头结点,请将其按升序排列并返回排序后的链表 。
  * @author: Qr
@@ -99,4 +101,70 @@ public class sort_list {
         curr.next = l1 == null ? l2 : l1;
         return dummyNode.next;
     }
+    //总结: 用递归的方法时间复杂度O(nlogn), 空间复杂度O(logn),可以用迭代的方法代替递归从而减低空间复杂度
+
+    //自底向上排序: 本质上就是把递归cut的方法改为迭代
+    //            cut: 用一个subLength表示每轮需要cut的子链表长度, 不断x2,迭代cut(sublength初始值为1，终值为listlength)
+    //            merge: merge每轮cut之后sublength的子链表
+    //            第一轮直接把链表cut成单个元素,然后[1,2],[2,3]...合并, sublengthx2,[1-2,3-4][5-6,7-8]合并....
+    public ListNode sortListBottomToUp(ListNode head){
+        if(head == null){
+            return head;
+        }
+        //链表长度
+        int listLength = 0;
+        ListNode temp = head;
+        while(temp != null){
+            listLength++;
+            temp = temp.next;
+        }
+        //每轮cut的子链表长度
+        int subLength = 1;
+        //每一轮的cut与merge
+        ListNode dummyNode = new ListNode(-1,head);
+        //sublength>=listlength时停止循环
+        while(subLength < listLength ){
+            //原链表头部
+            ListNode prev = dummyNode;
+            ListNode curr = prev.next;
+            //当前轮cut和merge
+            while(curr != null){
+                ListNode h1 = curr;
+                //往后遍历sublength-1,是为了遍历到list1的尾部
+                for (int i = 0; i < subLength-1 && curr.next != null; i++) {
+                    curr = curr.next;
+                }
+                //此时curr为list1的尾部, 需要断开, h2为curr.next
+                ListNode h2 = curr.next;
+                //把list1尾部断开
+                curr.next = null;
+                //再去寻找h2尾部并把尾部断开
+                curr = h2;
+                //curr可能为null(list1.length < subLength
+                for (int i = 0; i < subLength - 1 && curr != null && curr.next != null; i++) {
+                    curr = curr.next;
+                }
+                //此时curr为list2尾部// 链表尾部(list2.length < subLength)
+                ListNode nextRoundHead = null;
+                if(curr != null){
+                    nextRoundHead = curr.next;
+                    //把list2尾部切割
+                    curr.next = null;
+                }
+                ListNode merged = merge(h1,h2);
+                //prev为当前merge好的两个sublist的dummyNode
+                prev.next = merged;
+                //把prev移动至subList的尾部,为了下一轮进行prev.next = merged(吧前一个subList与后一个subList连接起来)
+                while(prev.next != null){
+                    prev = prev.next;
+                }
+                //进行下一轮
+                curr = nextRoundHead;
+            }
+            //为下一轮迭代准备
+            subLength = subLength << 1;
+        }
+        return dummyNode.next;
+    }
+    //自定向下方法: 吧递归cut的过程换成了迭代cut,最难的部分是两层循环的时侯如何去进行链表的操作,涉及到遍历、寻找、断开等等操作
 }
