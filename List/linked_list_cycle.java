@@ -2,6 +2,7 @@ package List;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -43,5 +44,37 @@ public class linked_list_cycle {
             head = head.next;
         }
         return false;
+    }
+
+    //快慢指针法: 如果有环,则最后快指针==慢指针
+    //空间复杂度: O(1)
+    public static boolean hashCycle_FastAndSlowPointer(ListNode head){
+        if (head == null || head.next == null){
+            return false;
+        }
+        ListNode fast = head.next;
+        ListNode slow = head;
+        boolean isCycled = false;
+        while(fast != null && slow != null){
+            slow = slow.next;
+            fast = fast.next;
+            if(fast != null){
+                fast = fast.next;
+            }
+            if(fast == slow){
+                isCycled = true;
+                break;
+            }
+        }
+        return isCycled;
+    }
+
+    public static void main(String[] args) {
+        ListNode node4 = new ListNode(-4);
+        ListNode node3 = new ListNode(0,node4);
+        ListNode node2 = new ListNode(2,node3);
+        ListNode node1 = new ListNode(3,node2);
+        node4.setNext(node2);
+        boolean flag = hashCycle_FastAndSlowPointer(node1);
     }
 }
