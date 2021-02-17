@@ -38,3 +38,4 @@
 * [155. 最小栈](./StackAndQueue/min_Stack.java)
 * [150. 逆波兰表达式求值](./StackAndQueue/evaluate_reverse_polish_notation.java)
 * [394. 字符串解码](./StackAndQueue/decode_string.java)
+* [94. 二叉树的中序遍历](./StackAndQueue/binary_tree_inorder_traversal.java)
