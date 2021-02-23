@@ -43,4 +43,4 @@
 
 ### 图
 
-* 200. 岛屿数量(./graph/number_of_islands.java)
+* [200. 岛屿数量](./graph/number_of_islands.java)
