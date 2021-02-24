@@ -42,6 +42,7 @@
 * [133. 克隆图](./StackAndQueue/clone_graph.java)
 * [84. 柱状图中最大的矩形](./StackAndQueue/largest_rectangle_in_histogram.java)
 * [232. 用栈实现队列](./StackAndQueue/implement_queue_using_stacks.java)
+* [542. 01 矩阵](./StackAndQueue/matrix_01.java)
 
 ### 图
 
