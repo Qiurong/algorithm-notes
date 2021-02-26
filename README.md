@@ -47,6 +47,7 @@
 ### 位操作
 
 - [136. 只出现一次的数字](./bitOperation/single_number.java)
+- [137. 只出现一次的数字 II](bitOperation/single_number_ii.java)
 
 ### 图
 
