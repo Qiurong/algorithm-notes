@@ -53,3 +53,8 @@
 ### 图
 
 * [200. 岛屿数量](./graph/number_of_islands.java)
+
+### 二分查找
+
+- [二分查找模板与笔记](./binary_search/二分查找.md)
+- [704. 二分查找](./binary_search/binary_search.java)
