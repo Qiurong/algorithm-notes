@@ -28,4 +28,15 @@ public class single_number {
         Integer uniqueNum = numSet.iterator().next();
         return uniqueNum;
     }
+    //总结: 时间复杂度：O(n), 空间复杂度: O(n/2)
+
+    //第二种骚操作解法：不断异或每一个元素, 最终结果只剩下那个单独的元素
+    // a ^ b ^ c ^ a ^ c = (a ^ a) ^ (b ^ b)^ c = c
+    public int singleNumberWithXOR(int []nums){
+        int uniqueNum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            uniqueNum = uniqueNum ^ nums[i];
+        }
+        return uniqueNum;
+    }
 }
