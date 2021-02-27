@@ -6,24 +6,43 @@ package binary_search;
  * @create: 2021-02-26 17:19
  **/
 public class binary_search {
-    public int search(int[] nums, int target) {
-        int start = 0;
-        int end = nums.length - 1;
+    public static int search(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
         int targetPos = -1;
-        int mid = (start + end) >> 1;
-        while(start <= end){
+        int mid;
+        while(left <= right){
+            mid = left + ((right - left) >> 1);
             if(nums[mid] == target){
                 targetPos = mid;
                 break;
             }
+            //在前半部分找
             else if (nums[mid] > target){
-                end = mid;
+                right = mid - 1;
             }
+            //在后半部分找
             else {
-                start = mid;
+                left = mid + 1;
             }
-            mid = (start + end) >> 1;
         }
         return targetPos;
     }
+
+    public static int searchTemplateTwo(int[] nums, int target){
+        int left = 0;
+        int right = nums.length - 1;
+        int targetPos = -1;
+        int mid;
+        return targetPos;
+    }
+
+    public static int searchTemplateThree(int[] nums, int target){
+        int left = 0;
+        int right = nums.length - 1;
+        int targetPos = -1;
+        int mid;
+        return targetPos;
+    }
+
 }
