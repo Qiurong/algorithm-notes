@@ -59,3 +59,4 @@
 - [二分查找模板与笔记](./binary_search/二分查找.md)
 - [704. 二分查找](./binary_search/binary_search.java)
 - [35. 搜索插入位置](./binary_search/search_insert_position.java)
+- [74. 搜索二维矩阵](./binary_search/search_a_2d_matrix.java)
