@@ -87,11 +87,4 @@ public class binary_search {
         //循环结束后剩余两个元素: left, right元素
         return targetPos;
     }
-
-    public static void main(String[] args) {
-        int [] nums = new int[]{1, 1, 1, 1, 1, 1};
-        int target = 2;
-        //int targetPos = searchTemplateTwo(nums, target);
-        int targetPos = searchTemplateThree(nums, target);
-    }
 }
