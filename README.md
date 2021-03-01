@@ -61,3 +61,4 @@
 - [35. 搜索插入位置](./binary_search/search_insert_position.java)
 - [74. 搜索二维矩阵](./binary_search/search_a_2d_matrix.java)
 - [278. 第一个错误的版本](./binary_search/first_bad_version.java)
+- [153. 寻找旋转排序数组中的最小值](./binary_search/find_minimum_in_rotated_sorted_array.java)
