@@ -60,3 +60,4 @@
 - [704. 二分查找](./binary_search/binary_search.java)
 - [35. 搜索插入位置](./binary_search/search_insert_position.java)
 - [74. 搜索二维矩阵](./binary_search/search_a_2d_matrix.java)
+- [278. 第一个错误的版本](./binary_search/first_bad_version.java)
