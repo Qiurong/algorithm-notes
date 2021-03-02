@@ -64,3 +64,4 @@
 - [153. 寻找旋转排序数组中的最小值](./binary_search/find_minimum_in_rotated_sorted_array.java)
 - [154. 寻找旋转排序数组中的最小值 II](binary_search/find_minimum_in_rotated_sorted_array_ii.java)
 - [33. 搜索旋转排序数组](binary_search/search_in_rotated_sorted_array.java)
+- [81. 搜索旋转排序数组 II](binary_search/search_in_rotated_sorted_array_ii.java)
