@@ -41,17 +41,17 @@ public class search_in_rotated_sorted_array {
                 if (nums[end] == target){
                     return end;
                 }
-                //此时 mid之后不存在比mid小的数字
+                //此时 mid之后不存在比mid小的数字：
                 else if (nums[end] > nums[mid]){
                     end = mid;
                 }else {
                     //num[end]<nums[mid]
-                    //此时比nums[mid]小的部分,两边都可能存在
-                    //nums[end] < nums[mid]的前提下, 且nums[end] < nums[target]:去前面
+                    //此时比nums[mid]小的部分,两边都可能存在：    4 5 6  7  0 1 2
+                    //nums[end] < nums[mid]的前提下, 且nums[end] < target:去前面
                     if (nums[end] < target){
                         end = mid;
                     }else {
-                        //nums[end] < nums[mid]的前提下, 且nums[end] > nums[target]: 来后面
+                        //nums[end] < nums[mid]的前提下, 且nums[end] > target：来后面
                         start = mid + 1;
                     }
                 }
