@@ -12,46 +12,53 @@ public class search_in_rotated_sorted_array {
         int mid;
         while(start < end){
             mid = start + ((end - start) >> 1);
+            //第一层：根据nums[mid] 与 target的 关系去比较
             if (nums[mid] == target){
                 return mid;
             }
+            //mid < target: 需要去比mid大的部分
             else if (nums[mid] < target){
-                //这时候需要去往比nums[mid]大的部分. 但需要根据情况讨论是去前半部分还是后半部分
-                if (nums[end] == target){
-                    return end;
-                }
-                //nums[end] < nums[mid], 此时 mid 之前不存在比mid大的数字
-                else if (nums[end] < nums[mid]){
+                //第二层：根据 num[end] 与 nums[mid] 的关系来去到比mid大的部分
+                //end < mid：[start, mid]严格升序, 比mid大的部分在[mid + 1, end]之间.
+                if (nums[end] < nums[mid]){
                     start = mid + 1;
                 }else {
-                    //nums[end] > nums[mid],
-                    //nums[end] > nums[mid]的前提下, 需要去往比num[mid]大的部分,前后两部分都有可能比nums[mid]大 5 1 3
+                    //end > mid:  [mid, end]严格升序, 最小值在[start, mid]之间,
+                    //升序数组：[mini, mid], [mid, end], [start, mini -1]
+                    //target其实属于[mid, end] [start, mini-1]这两个区间其一。
+                    //根据a[end] 与 target 比较结果决定往哪个区间去迭代。
+                    if (nums[end] == target){
+                        return end;
+                    }
                     //num[end] > target，target属于[mid, end]
-                    if (nums[end] > target){
+                    else if (nums[end] > target){
                         start = mid + 1;
                     }
                     else {
-                        //nums[end] < target, target属于前面
+                        //nums[end] < target, target属于[start, mini-1]
                         end = mid;
                     }
                 }
             }
             //nums[mid] > target, 此时需要去比nums[mid]小的部分
             else {
-                if (nums[end] == target){
-                    return end;
-                }
-                //此时 mid之后不存在比mid小的数字：
-                else if (nums[end] > nums[mid]){
+                //第二层：根据nums[end] 与 [mid]的关系去到比[mid]小的部分
+                //end > mid: [mid, end]严格升序, 去往[start,mid]部分
+                if (nums[end] > nums[mid]){
                     end = mid;
                 }else {
-                    //num[end]<nums[mid]
-                    //此时比nums[mid]小的部分,两边都可能存在：    4 5 6  7  0 1 2
-                    //nums[end] < nums[mid]的前提下, 且nums[end] < target:去前面
-                    if (nums[end] < target){
+                    //end < mid：[start, mid]严格升序,最小值在[mid, end]之间
+                    //升序数组：{[mini, end], [start, mid], [mid, mini -1]}
+                    //target其实属于[start, mid], [mini, end]之间
+                    //根据[end] 与 target 比较结果去迭代。
+                    if (nums[end] == target){
+                        return end;
+                    }
+                    //[end] < target: target属于[start, mid]
+                    else if (nums[end] < target){
                         end = mid;
                     }else {
-                        //nums[end] < nums[mid]的前提下, 且nums[end] > target：来后面
+                        //[end] > target: target属于[mini,end]
                         start = mid + 1;
                     }
                 }
