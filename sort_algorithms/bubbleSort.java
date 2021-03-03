@@ -1,7 +1,7 @@
 package sort_algorithms;
 
 /**
- * @description:
+ * @description: 冒泡排序
  * @author: Qr
  * @create: 2021-03-03 09:10
  **/
