@@ -32,6 +32,7 @@
 * [142. 环形链表 II](./List/linked_list_cycle_ii.java)
 * [234. 回文链表](./List/palindrome_linked_list.java)
 * [138. 复制带随机指针的链表](./List/copy_list_with_random_pointer.java)
+* [147. 对链表进行插入排序](./List/insertion_sort_list.java)
 
 ### 栈和队列
 
