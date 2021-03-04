@@ -57,8 +57,8 @@ public class quickSort {
         return i;
     }
 
-    //从后向前找到第一个 < base的, 从前往后找到第一个 > base的,swap, i++,j--
-    //  最后swap(i, start). 整个过程中基准值只swap了一次
+    //从后向前找到第一个 < base的, 从前往后找到第一个 > base的, swap;
+    //  最后swap(i, start). 整个过程中基准值只在最后swap了一次
     public int partionFuncTwo(int[] nums, int start, int end){
         int base = nums[start];
         int i = start;
@@ -79,7 +79,6 @@ public class quickSort {
         return i;
     }
 
-    //swap函数错误
     public void swap(int[] nums, int i, int j){
         int temp = nums[i];
         nums[i] = nums[j];
