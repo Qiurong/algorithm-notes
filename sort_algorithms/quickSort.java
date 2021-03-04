@@ -29,7 +29,6 @@ public class quickSort {
         //选取第一个元素为基准
         int base = nums[start];
         //选取两个指针i,j用于后续遍历
-        //这里因为基准换来换去, 所以 i = start
         int i = start;
         int j = end;
 
