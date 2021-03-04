@@ -7,6 +7,7 @@ package sort_algorithms;
  **/
 public class mergeSort {
     //思想: 不断二分拆解直至不能拆解, 合并两个有序数组
+    //这里使用的是额外的空间和递归方法去实现, 同样的也有非递归和in-place实现法, 但用的不多, 所以这里没写.
     public int[] mergeSort(int[] nums){
         mergeSortWithRecurison(nums, 0, nums.length - 1);
 
@@ -23,6 +24,7 @@ public class mergeSort {
         merge(nums,start, mid, end);
     }
     public void merge(int[] nums, int start, int mid, int end){
+        //额外的数组空间用于暂时保存排序后的数组.
         int[] sorted = new int[end - start + 1];
         int i = start;
         int j = mid + 1;
