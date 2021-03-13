@@ -83,3 +83,4 @@
 - [不同路径](dynamic_programming/unique_paths.java)
 - [不同路径II](dynamic_programming/unique_paths_ii.java)
 - [爬楼梯](dynamic_programming/climbing_stairs.java)
+- [跳跃游戏](dynamic_programming/jump_game.java)
