@@ -85,3 +85,5 @@
 - [爬楼梯](dynamic_programming/climbing_stairs.java)
 - [跳跃游戏](dynamic_programming/jump_game.java)
 - [跳跃游戏 II](dynamic_programming/jump_game_ii.java)
+- [分割回文串](dynamic_programming/palindrome_partitioning.java)
+- [分割回文串 II](dynamic_programming/palindrome_partitioning_ii.java)
