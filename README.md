@@ -78,12 +78,13 @@
 
 ### 动态规划
 
-- [三角形最小路径和](dynamic_programming/triangle.java)
-- [最小路径和](dynamic_programming/minimum_path_sum.java)
-- [不同路径](dynamic_programming/unique_paths.java)
-- [不同路径II](dynamic_programming/unique_paths_ii.java)
-- [爬楼梯](dynamic_programming/climbing_stairs.java)
-- [跳跃游戏](dynamic_programming/jump_game.java)
-- [跳跃游戏 II](dynamic_programming/jump_game_ii.java)
-- [分割回文串](dynamic_programming/palindrome_partitioning.java)
-- [分割回文串 II](dynamic_programming/palindrome_partitioning_ii.java)
+- [120. 三角形最小路径和](dynamic_programming/triangle.java)
+- [64. 最小路径和](dynamic_programming/minimum_path_sum.java)
+- [62. 不同路径](dynamic_programming/unique_paths.java)
+- [63. 不同路径II](dynamic_programming/unique_paths_ii.java)
+- [70. 爬楼梯](dynamic_programming/climbing_stairs.java)
+- [55. 跳跃游戏](dynamic_programming/jump_game.java)
+- [45. 跳跃游戏 II](dynamic_programming/jump_game_ii.java)
+- [131. 分割回文串](dynamic_programming/palindrome_partitioning.java)
+- [132. 分割回文串 II](dynamic_programming/palindrome_partitioning_ii.java)
+- [300. 最长递增子序列](dynamic_programming/longest_increasing_subsequence.java)
