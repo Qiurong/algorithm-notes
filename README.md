@@ -86,5 +86,3 @@
 - [55. 跳跃游戏](dynamic_programming/jump_game.java)
 - [45. 跳跃游戏 II](dynamic_programming/jump_game_ii.java)
 - [131. 分割回文串](dynamic_programming/palindrome_partitioning.java)
-- [132. 分割回文串 II](dynamic_programming/palindrome_partitioning_ii.java)
-- [300. 最长递增子序列](dynamic_programming/longest_increasing_subsequence.java)
