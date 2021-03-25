@@ -101,4 +101,51 @@ public class palindrome_partitioning {
         }
     }
 
+    //加入动态规划提前预处理得到[startIndex,i]是否为回文子串。
+    //计算化搜索只是保存了每次计算之后[startIndex, i]是否回文，但在判断回文的过程还是产生了重复计算。
+    //比如计算[0,3]是否回文, 其重复计算了[0,1]是否回文。
+    public List<List<String>> partition_WithDP(String s){
+        List<List<String>> res = new ArrayList<List<String>>();
+        List<String> path = new LinkedList<>();
+        int len = s.length();
+        char[] chars = s.toCharArray();
+        //DP预处理. 定义f(i, j): [i,j]是否回文.
+        // i==j, f(i,j) = true                           |---   j-1==1,  f(i, j) = ([i] ==[j])
+        // 否则   f(i, j) = f(i+1, j-1) && ([i] == [j]) --|
+        //                                               |---   j-1>1,   f(i, j) = f(i+1, j-1) && ([i] == [j])
+        //
+        boolean[][] dp = new boolean[len][len];
+        //这里二重循环是 先j后i,  j为末尾, 计算[0,3]需要用到[0,1]. 所以需要先计算[0,1]
+        for (int j = 0; j < len; j++) {
+            for (int i = 0; i <= j; i++) {
+                if (i == j){
+                    dp[i][j] = true;
+                }
+                else if (j - i == 1){
+                    dp[i][j] = chars[i] == chars[j];
+                }
+                else if (j - i > 1 && chars[i] == chars[j] && dp[i+1][j-1]){
+                    dp[i][j] = true;
+                }
+            }
+        }
+        backtrack_withDPPre(chars, 0, res, path, dp);
+        return res;
+    }
+
+    public void backtrack_withDPPre(char[] chars, int startIndex, List<List<String>> res, List<String> path, boolean[][] dp){
+        if (startIndex >= chars.length){
+            res.add(new ArrayList<>(path));
+        }
+        //[startIndex, i]
+        for (int i = startIndex; i < chars.length; i++) {
+            if (dp[startIndex][i]){
+                String str = new String(chars, startIndex,i-startIndex+1);
+                path.add(str);
+                backtrack_withDPPre(chars,i+1,res,path,dp);
+                path.remove(path.size()-1);
+            }
+        }
+    }
+
 }
