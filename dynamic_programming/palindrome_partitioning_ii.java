@@ -1,5 +1,6 @@
 package dynamic_programming;
 
+import java.lang.management.ManagementFactory;
 import java.util.Stack;
 
 /**
@@ -56,7 +57,8 @@ public class palindrome_partitioning_ii {
         return true;
     }
 
-    //使用动态规划预处理
+    //动态规划处理回文串问题 + 分割次数问题
+    //时间：O(n^2) 空间:O(n^2)
     public int minCut_DP(String s){
         int len = s.length();
         if (len == 1){
@@ -78,23 +80,24 @@ public class palindrome_partitioning_ii {
                 }
             }
         }
-        //贪心法去找每一个序列的最大回文子序列
-        //贪心的方法：找出以startIndex为开始的最大回文序列，在不断迭代
-        //错误。
-        int startIndex = 0;
-        int endIndex = len - 1;
-        while (startIndex < len){
-            for (int j = endIndex; j >= startIndex; j--){
-                if (dp[startIndex][j]){
-                    startIndex = j + 1;
-                    if (startIndex < len){
-                        minCutTimes++;
+        //动态规划去记录以i为结尾的最小分割次数f(i) [本质是对枚举的优化]
+        //f(i) = min{f(j)} + 1 (  0<=j<i & dp[j+1][j] 即 [j+1,i]为回文 )  依次枚举, 得到以i为结尾的最小分割次数f(i)
+        int currMinCutTimes[] = new int[len];
+        for (int i = 0; i < len; i++) {
+            //给数组赋初值
+            currMinCutTimes[i] = Integer.MAX_VALUE;
+            if (dp[0][i]){
+                currMinCutTimes[i] = 0;
+            }
+            else {
+                for (int j = 0; j < i; j++) {
+                    if (dp[j+1][i]){
+                        currMinCutTimes[i] = Math.min(currMinCutTimes[i], currMinCutTimes[j] + 1);
                     }
-                    break;
                 }
             }
         }
-        return minCutTimes;
+        return currMinCutTimes[len - 1];
     }
 
 }
