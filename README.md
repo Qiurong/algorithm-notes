@@ -94,3 +94,4 @@
 ### 牛客网
 
 - [进制转换](nowcoder/huawei/base_conversion.java)
+- [质数因子](nowcoder/huawei/prime_factor.java)
