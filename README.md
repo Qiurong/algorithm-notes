@@ -90,3 +90,7 @@
 - [5. 最长回文子串](dynamic_programming/longest_palindromic_substring.java)
 - [300. 最长递增子序列](dynamic_programming/longest_increasing_subsequence.java)
 - [53. 最大子序和](dynamic_programming/maximum_subarray.java)
+
+### 牛客网
+
+- [进制转换](nowcoder/huawei/base_conversion.java)
