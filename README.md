@@ -100,3 +100,4 @@
 - [字符个数统计](nowcoder/huawei/char_count.java)
 - [字符串最后一个单词长度](nowcoder/huawei/string_last_word_length.java)
 - [计算字符个数](nowcoder/huawei/count_character.java)
+- [明明的随机数](nowcoder/huawei/remove_duplicates_and_sort.java)
