@@ -97,3 +97,4 @@
 - [质数因子](nowcoder/huawei/prime_factor.java)
 - [合并表记录](nowcoder/huawei/merge_list.java)
 - [提取不重复的整数](nowcoder/huawei/extract_different_num.java)
+- [字符个数统计](nowcoder/huawei/char_count.java)
