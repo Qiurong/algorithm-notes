@@ -101,3 +101,4 @@
 - [字符串最后一个单词长度](nowcoder/huawei/string_last_word_length.java)
 - [计算字符个数](nowcoder/huawei/count_character.java)
 - [明明的随机数](nowcoder/huawei/remove_duplicates_and_sort.java)
+- [合唱队](nowcoder/huawei/chorus_height.java)
