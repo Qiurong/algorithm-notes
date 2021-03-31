@@ -1,14 +1,16 @@
 package nowcoder.huawei;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
- * @description: 牛客网HJ5:进制转换
+ * @description: 牛客网HJ5:进制转换 https://www.nowcoder.com/ta/huawei
  * @author: Qr
  * @create: 2021-03-29 16:14
  **/
 public class base_conversion {
-
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         while (in.hasNext()){
