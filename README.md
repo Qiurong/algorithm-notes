@@ -90,6 +90,7 @@
 - [5. 最长回文子串](dynamic_programming/longest_palindromic_substring.java)
 - [300. 最长递增子序列](dynamic_programming/longest_increasing_subsequence.java)
 - [53. 最大子序和](dynamic_programming/maximum_subarray.java)
+- [翻转数位](dynamic_programming/reverse_bits_lcci.java)
 
 ### 牛客网
 
