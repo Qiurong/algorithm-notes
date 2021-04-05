@@ -105,6 +105,6 @@
 - [合唱队](nowcoder/huawei/chorus_height.java)
 - [卡牌游戏](nowcoder/alibaba/card.java)
 
-### 公司
+### 面试题
 
 - [146. LRU 缓存机制](company/lru_cache.java)
