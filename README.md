@@ -107,4 +107,8 @@
 
 ### 面试题
 
-- [146. LRU 缓存机制](company/lru_cache.java)
+- [146. LRU 缓存机制](interview-questions/lru_cache.java)
+
+### 堆
+
+- [剑指40. 最小的k个数](heap/topK.java)
