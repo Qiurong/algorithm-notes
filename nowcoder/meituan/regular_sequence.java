@@ -1,6 +1,7 @@
 package nowcoder.meituan;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -19,6 +20,12 @@ public class regular_sequence {
      *                               原数组：3 0 3 1 3, 移除后
      *                               剩余序列：2 4 5
      *                               剩余数组：3 0 3. 那么3-2:1, 3-4:1 0-5:5 操作次数：7
+     *  正确应该是：0-2:2 3-4:1 3-5:2 操作次数：5 即先升序原数组，然后计算原数组和剩余序列的相同下标的差
+     *  更进一步：一开始不用移除原数组中属于正则序列的元素，直接原数组升序，然后计算原数组和剩余序列的相同下标的差。
+     *  3 0 3 1 3 ---> 0 1 3 3 3
+     *                 1 2 3 4 5
+     *                 1 1 0 1 2，操作次数5.
+     *  总结：这题还是没发现题中的规律，对于贪心策略的运用和实现不熟。
      */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -26,44 +33,22 @@ public class regular_sequence {
             int n  = in.nextInt();
             int operationNum = 0;   //操作次数
             ArrayList<Integer> sequence = new ArrayList<>(n);   //存放原数组需要达成的状态
-            //初始值为：1...n
+            int[]nums = new int[n];    //原数组
+
+            //sequence初始值为：1...n
             for (int i = 0; i < n; i++){
                 sequence.add(i+1);
             }
-            ArrayList<Integer> nums = new ArrayList<>();    //原数组
-            //在1..n之内的数不需要操作，在1..n之外的数存入nums数组并后续操作
-            for (int i = 0; i < n; i++) {
-                int num = in.nextInt();
-                //移除sequence数组中一些状态
-                //这里需要注意的是：可能存在多个相同num, 只能移除一个
-                if(num>=1 && num<= n && sequence.contains(num)){
-                    sequence.remove(sequence.indexOf(num));
-                }else {
-                    //需要操作的数
-                    nums.add(num);
-                }
-            }
 
-            //遍历需要达成的状态数组
-            for (int i = 0; i < sequence.size(); i++) {
-                int toBeNum = sequence.get(i);  //需要达成的数字
-                //在nums数组中找离这个数字最近的数
-                int beNum = 0;  //nums数组中离toBeNum最近的数字
-                int minOperaNum = Integer.MAX_VALUE;       //当前数组距离toBeNum最小的操作次数
-                //争对sequence当前下标的数toBeNum 寻找 与之最近的 nums中的数beNum
-                for (int j = 0; j < nums.size(); j++) {
-                    int currNum = nums.get(j);
-                    int currOpearNum = Math.abs(toBeNum - currNum);
-                    if (minOperaNum > currOpearNum){
-                        minOperaNum = currOpearNum;
-                        beNum = currNum;
-                    }
-                }
-                operationNum+=minOperaNum;
-                int index = nums.indexOf(beNum);
-                if (index != -1){
-                    nums.remove(index);
-                }
+            //nums数组赋值
+            for (int i = 0; i < n; i++){
+                nums[i] = in.nextInt();
+            }
+            Arrays.sort(nums);
+
+            //遍历计算操作次数
+            for (int i = 0; i < n; i++) {
+                operationNum+= Math.abs(nums[i] - sequence.get(i));
             }
 
             System.out.println(operationNum);
