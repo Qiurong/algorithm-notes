@@ -104,6 +104,7 @@
 - [明明的随机数](nowcoder/huawei/remove_duplicates_and_sort.java)
 - [合唱队](nowcoder/huawei/chorus_height.java)
 - [卡牌游戏](nowcoder/alibaba/card.java)
+- [淘汰分数](nowcoder/meituan/eliminate_score.java)
 
 ### 面试题
 
