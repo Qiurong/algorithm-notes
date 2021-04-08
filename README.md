@@ -105,7 +105,7 @@
 - [合唱队](nowcoder/huawei/chorus_height.java)
 - [卡牌游戏](nowcoder/alibaba/card.java)
 - [淘汰分数](nowcoder/meituan/eliminate_score.java)
-- [淘汰分数](nowcoder/meituan/regular_sequence.java)
+- [正则序列](nowcoder/meituan/regular_sequence.java)
 - [公司食堂](nowcoder/meituan/company_canteen.java)
 
 ### 面试题
