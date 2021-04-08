@@ -14,7 +14,11 @@ public class regular_sequence {
     /**
      *  知识点：排序+贪心
      *  自己做时的想法：基本策略是贪心，对于原数组中属于正则序列的不动，剩余的元素每个元素寻找与之对应的最近的正则序列元素。
-     *  自己初始想法其实基本正确，但错在 1.删除多个属于[1..n]的元素
+     *  自己初始想法其实基本正确，但错在 1.删除多个属于[1..n]的元素  需要解决的问题：原数组中多个属于[1..n]相同的值只删除一个
+     *                             2.在剩余的nums数组中，剩余元素贪心错误
+     *                               原数组：3 0 3 1 3, 移除后
+     *                               剩余序列：2 4 5
+     *                               剩余数组：3 0 3. 那么3-2:1, 3-4:1 0-5:5 操作次数：7
      */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -31,41 +35,35 @@ public class regular_sequence {
             for (int i = 0; i < n; i++) {
                 int num = in.nextInt();
                 //移除sequence数组中一些状态
-                if(num>=1 && num<= n){
-                    int index = sequence.indexOf(num);
-                    if (index != -1){
-                        sequence.remove(index);
-                    }
+                //这里需要注意的是：可能存在多个相同num, 只能移除一个
+                if(num>=1 && num<= n && sequence.contains(num)){
+                    sequence.remove(sequence.indexOf(num));
                 }else {
                     //需要操作的数
                     nums.add(num);
                 }
             }
 
-
             //遍历需要达成的状态数组
             for (int i = 0; i < sequence.size(); i++) {
                 int toBeNum = sequence.get(i);  //需要达成的数字
-                if (!nums.isEmpty()){
-                    //在nums数组中找离这个数字最近的数
-                    int beNum = nums.get(0);    //nums数组中离toBeNum最近的数字
-                    int minOperaNum = Math.abs(toBeNum - beNum);       //当前数组距离toBeNum最小的操作次数
-                    for (int j = 0; j < nums.size(); j++) {
-                        int currNum = nums.get(j);
-                        int currOpearNum = Math.abs(toBeNum - currNum);
-                        if (minOperaNum > currOpearNum){
-                            minOperaNum = currOpearNum;
-                            beNum = currNum;
-                        }
-                    }
-                    operationNum+=minOperaNum;
-                    int index = nums.indexOf(beNum);
-                    if (index != -1){
-                        nums.remove(index);
+                //在nums数组中找离这个数字最近的数
+                int beNum = 0;  //nums数组中离toBeNum最近的数字
+                int minOperaNum = Integer.MAX_VALUE;       //当前数组距离toBeNum最小的操作次数
+                //争对sequence当前下标的数toBeNum 寻找 与之最近的 nums中的数beNum
+                for (int j = 0; j < nums.size(); j++) {
+                    int currNum = nums.get(j);
+                    int currOpearNum = Math.abs(toBeNum - currNum);
+                    if (minOperaNum > currOpearNum){
+                        minOperaNum = currOpearNum;
+                        beNum = currNum;
                     }
                 }
-
-
+                operationNum+=minOperaNum;
+                int index = nums.indexOf(beNum);
+                if (index != -1){
+                    nums.remove(index);
+                }
             }
 
             System.out.println(operationNum);
