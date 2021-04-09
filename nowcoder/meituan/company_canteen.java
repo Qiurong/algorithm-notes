@@ -1,5 +1,10 @@
 package nowcoder.meituan;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
 /**
@@ -10,21 +15,29 @@ import java.util.Scanner;
  **/
 public class company_canteen {
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int groups = Integer.parseInt(in.nextLine());       //组数
+    //算法：维护数组中两个指针：第一个O P0和第一个1 P1.
+    //遇到男：寻找P1, P1越界则P0
+    //遇到女：寻找P0, P0越界则P1
+    //笔记：这题太恶心了...一样的算法用sout和Scanner就超时，必须要用BufferedReader和BufferedWriter.
+    public static void main (String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
+        int groups = Integer.parseInt(reader.readLine());       //组数
         for (int i = 0; i < groups; i++) {
-            int tableNum = Integer.parseInt(in.nextLine()); //桌子数N
-            String tableStr = in.nextLine();                //获取桌子状态的字符串
-            int m = Integer.parseInt(in.nextLine());        //进来用餐的人数m
-            String peoples = in.nextLine();                 //进来用餐的人数的具体情况
+            int tableNum = Integer.parseInt(reader.readLine()); //桌子数N
+            String tableStr = reader.readLine();                //获取桌子状态的字符串
+            int m = Integer.parseInt(reader.readLine());        //进来用餐的人数m
+            String peoples = reader.readLine();                 //进来用餐的人数的具体情况
             int[] tableStatus = new int[tableNum];          //桌子状态数组，每个状态为0 1 2
             int firstZeroIndex = 0;                         //数组中第一个0的下标
             int firstOneIndex = 0;                          //数组中第一个1的下标
             boolean zeroSet = false;                        //初始化中标记0的下标是否被记录
             boolean oneSet = false;                         //初始化中标记1的下标是否被记录
             int k = 0;                                      //输出k即每个人被安排在哪个桌子
+            int res[] = new int[m];                          //最后的结果
 
+
+            //获取桌子的分布
             for (int j = 0; j < tableStatus.length; j++) {
                 tableStatus[j] = tableStr.charAt(j) - '0';
                 if (tableStatus[j] == 0 && !zeroSet){
@@ -101,8 +114,16 @@ public class company_canteen {
                         }
                     }
                 }
-                System.out.println(k);
+                res[j] = k;
+            }
+            //输出结果
+            for (int r: res) {
+                writer.write(Integer.toString(r));
+                writer.newLine();
             }
         }
+
+        //刷新
+        writer.flush();
     }
 }
