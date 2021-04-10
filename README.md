@@ -107,6 +107,7 @@
 - [淘汰分数](nowcoder/meituan/eliminate_score.java)
 - [正则序列](nowcoder/meituan/regular_sequence.java)
 - [公司食堂](nowcoder/meituan/company_canteen.java)
+- [优美字符串](nowcoder/meituan/elegant_string.java)
 
 ### 面试题
 
