@@ -94,7 +94,8 @@
 
 ### 递归
 
-- [反转字符串](recursion/reverse_string.java)
+- [344. 反转字符串](recursion/reverse_string.java)
+- [24. 两两交换链表中的节点](recursion/swap_nodes_in_pairs.java)
 
 ### 牛客网
 
