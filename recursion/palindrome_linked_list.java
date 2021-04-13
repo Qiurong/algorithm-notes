@@ -1,8 +1,10 @@
 package recursion;
 
 
+import java.util.Stack;
+
 /**
- * @description:
+ * @description: 234. 回文链表
  * @author: Qr
  * @create: 2021-04-12 22:36
  **/
@@ -42,5 +44,57 @@ public class palindrome_linked_list {
             frontPointer = frontPointer.next;
         }
         return true;
+    }
+
+    //方法2：反转后半部们链表，然后将前半部分和反转后的后半部分进行比较，比较完恢复后半部分
+    public boolean reverseLastHalf(ListNode head){
+        if (head == null || head.next == null){
+            return true;
+        }
+
+        ListNode fast = head;
+        ListNode slow = head;
+        //快慢指针寻找链表中点mid,
+        //结束后，fast指针为null, slow指针为链表中部/中部向下取整
+        while(fast != null){
+            fast = fast.next;
+            if (fast != null){
+                fast = fast.next;
+            }
+            if (fast != null){
+                slow = slow.next;
+            }
+        }
+        //第一部分和第二部分
+        ListNode lastHalfHead = slow.next;
+        ListNode firstHalfHead = head;
+        ListNode reversedLastHalfHead = reverseList(lastHalfHead);
+        ListNode tail = reversedLastHalfHead;
+        while (firstHalfHead != null && reversedLastHalfHead != null){
+            if (firstHalfHead.val != reversedLastHalfHead.val){
+                return false;
+            }
+            firstHalfHead = firstHalfHead.next;
+            reversedLastHalfHead = reversedLastHalfHead.next;
+        }
+        //再把链表还原
+        slow.next = reverseList(tail);
+        return true;
+    }
+
+    //反转链表
+    public ListNode reverseList(ListNode head){
+        if (head == null || head.next == null){
+            return head;
+        }
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null){
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
     }
 }
