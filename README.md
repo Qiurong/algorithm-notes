@@ -101,6 +101,10 @@
 - [95. 不同的二叉搜索树 II](recursion/unique_binary_search_trees_ii.java)
 - [509. 斐波那契数](recursion/fibonacci_number.java)
 
+### 滑动窗口
+
+- [567. 字符串的排列](sliding_window/permutation_in_string.java)
+
 ### 牛客网
 
 - [进制转换](nowcoder/huawei/base_conversion.java)
