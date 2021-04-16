@@ -17,6 +17,7 @@
 * [103. 二叉树的锯齿形层序遍历](./binary_tree/binary_tree_zigzag_level_order_traversal.java)
 * [98. 验证二叉搜索树](./binary_tree/validate_binary_search_tree.java)
 * [701. 二叉搜索树中的插入操作](./binary_tree/insert_into_a_binary_search_tree.java)
+* [144. 二叉树的前序遍历](./binary_tree/binary_tree_preorder_traversal.java)
 
 ### 链表
 
@@ -106,6 +107,11 @@
 - [567. 字符串的排列](sliding_window/permutation_in_string.java)
 - [438. 找到字符串中所有字母异位词](sliding_window/find_all_anagrams_in_a_string.java)
 - [76. 最小覆盖子串](sliding_window/minimum_window_substring.java)
+
+### 二叉搜索树
+
+- [98. 验证二叉搜索树](binary_search_tree/validate_binary_search_tree.java)
+- 
 
 ### 牛客网
 
