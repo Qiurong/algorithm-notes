@@ -12,6 +12,8 @@
 
 ### 二叉树
 
+- [二叉树遍历模板](binary_tree/traverseTemplate.java)
+
 * [102. 二叉树的层序遍历](./binary_tree/binaryTreeLevelOrderTraversal.java)
 * [107. 二叉树的层序遍历 II](./binary_tree/binary_tree_level_order_traversal_ii.java)
 * [103. 二叉树的锯齿形层序遍历](./binary_tree/binary_tree_zigzag_level_order_traversal.java)
@@ -20,6 +22,7 @@
 * [144. 二叉树的前序遍历](./binary_tree/binary_tree_preorder_traversal.java)
 * [94. 二叉树的中序遍历](./binary_tree/binary_tree_inorder_traversal.java)
 * [145. 二叉树的后序遍历](./binary_tree/binary_tree_postorder_traversal.java)
+* [102. 二叉树的层序遍历](./binary_tree/binary_tree_level_order_traversal.java)
 
 ### 链表
 
