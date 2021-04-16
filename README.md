@@ -18,6 +18,7 @@
 * [98. 验证二叉搜索树](./binary_tree/validate_binary_search_tree.java)
 * [701. 二叉搜索树中的插入操作](./binary_tree/insert_into_a_binary_search_tree.java)
 * [144. 二叉树的前序遍历](./binary_tree/binary_tree_preorder_traversal.java)
+* [94. 二叉树的中序遍历](./binary_tree/binary_tree_inorder_traversal.java)
 
 ### 链表
 
