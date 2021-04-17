@@ -36,7 +36,6 @@ public class traverseTemplate {
     public void traverse_preorder(TreeNode root){
         Stack<TreeNode> stack = new Stack<>();
         TreeNode curr = root;
-        stack.push(curr);
         while (curr != null || !stack.isEmpty()){
             //根节点-最左子结点压入栈
             while (curr != null){
