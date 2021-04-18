@@ -28,6 +28,7 @@
 - [98. 验证二叉搜索树](binary_search_tree/validate_binary_search_tree.java)
 - [701. 二叉搜索树中的插入操作](binary_search_tree/insert_into_a_binary_search_tree.java)
 - [450. 删除二叉搜索树中的节点](binary_search_tree/delete_node_in_a_bst.java)
+- [110. 平衡二叉树](binary_search_tree/balanced_binary_tree.java)
 
 ### 链表
 
