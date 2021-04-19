@@ -17,15 +17,14 @@ public class subsets {
         return res;
     }
 
-
+    //组合/子集问题从start开始
     public  void backtrack(int start,int[] nums){
         //这里对于所有path上的路径都需要，所以不存在结束条件
         res.add(new ArrayList<Integer>(path));
         for (int i = start; i < nums.length; i++) {
             path.add(nums[i]);                 //做出选择
-            backtrack(i+1,nums);         //递归到下一层, 标识下一个选择列表的开始位置
+            backtrack(i+1,nums);         //递归到下一层, 标识下一个选择列表的开始位置即 当前元素i 的下一元素 i+1
             path.remove(path.size()-1); //撤销选择
         }
     }
-
 }

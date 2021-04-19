@@ -11,7 +11,6 @@ import java.util.List;
  **/
 public class permutations {
 
-    //难点：回溯的下一步如何处理。
     //根据题目要求，不能填写已经标记过的数，因此用一个标记数组来标记是否填过
     List<List<Integer>> res = new ArrayList<>();
     List<Integer> path = new ArrayList<>();
@@ -19,13 +18,14 @@ public class permutations {
 
     public List<List<Integer>> permute(int[] nums) {
         visit = new boolean[nums.length];
-        Arrays.fill(visit,false);
-        backtrack(0,nums);
+        backtrack(nums);
         return res;
     }
-    //index代表当前取得下标
-    public void backtrack(int depth, int[] nums){
-        if (depth == nums.length){
+
+    //每一步遍历所有元素, 所以不需要start形参
+    public void backtrack(int[] nums){
+        //达到递归深度，返回
+        if (path.size() == nums.length){
             res.add(new ArrayList<>(path));
             return;
         }
@@ -38,11 +38,9 @@ public class permutations {
             }
             path.add(nums[i]);
             visit[i] = true;
-            //这里更新时更新depth参数
-            backtrack(depth+1,nums);
+            backtrack(nums);
             visit[i] = false;
             path.remove(path.size() - 1);
         }
     }
-
 }

@@ -22,7 +22,6 @@ public class subsets_ii {
 
     public void backtrack(int start, int[] nums){
         res.add(new ArrayList<Integer>(path));
-
         for (int i = start; i < nums.length; i++) {
             //当前被选中的数字与上一个数字相同则剪枝
             if (i > start && nums[i] == nums[i-1]){
