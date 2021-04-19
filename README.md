@@ -124,6 +124,8 @@
 - [回溯模板](backtrack/回溯模板.md)
 - [78. 子集](backtrack/subsets.java)
 - [90. 子集 II](backtrack/subsets_ii.java)
+- [46. 全排列](backtrack/permutations.java)
+- 
 
 ### 牛客网
 
