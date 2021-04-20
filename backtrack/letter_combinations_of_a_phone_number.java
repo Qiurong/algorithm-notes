@@ -77,4 +77,43 @@ public class letter_combinations_of_a_phone_number {
         }
     }
 
+    //优化
+    //1.用一个string数组代替多个char数组，后期取值为str[i - '2'];
+    String[] chars = {
+        "abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"
+    };
+    List<String> res;
+    StringBuilder builder;
+
+    public List<String> letterCombinations_optimized(String digits){
+        res = new ArrayList<>();
+        if(digits.length()==0 || digits == null){
+            return res;
+        }
+
+        builder = new StringBuilder();
+        backtrack(0,digits);
+        return res;
+    }
+
+    /**
+     *
+     * @param index: digits的下标
+     * @param digits: 题目中的digits
+     */
+    public void backtrack(int index,String digits){
+        if (index == digits.length()){
+            res.add(builder.toString());
+            return;
+        }
+        //获取当前digits的start下标对应的字符串
+        String currStr = chars[digits.charAt(index) - '2'];
+
+        //遍历字符串. 对于当前index对应的字符串的每个字符，递归调用计算下一个index对应的字符串的每个字符进行拼接
+        for (int i = 0; i < currStr.length(); i++) {
+            builder.append(currStr.charAt(i));
+            backtrack(index+1,digits);
+            builder.deleteCharAt(builder.length()-1);
+        }
+    }
 }
