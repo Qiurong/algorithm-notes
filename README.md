@@ -46,6 +46,7 @@
 * [138. 复制带随机指针的链表](./List/copy_list_with_random_pointer.java)
 * [147. 对链表进行插入排序](./List/insertion_sort_list.java)
 * [链表总结笔记](./List/ListOperationTemplate.md)
+* [剑指22. 链表中倒数第k个节点](./List/getKthFromEnd.java)
 
 ### 栈和队列
 
