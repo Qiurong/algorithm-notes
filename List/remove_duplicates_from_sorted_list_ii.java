@@ -64,4 +64,36 @@ public class remove_duplicates_from_sorted_list_ii {
         }
         return dummyNode.next;
     }
+
+    //用两个变量prev和curr 更容易理解
+    public ListNode deleteDuplicates_ii(ListNode head) {
+        ListNode dummyNode = new ListNode(0);
+        dummyNode.next = head;
+        //上一个非重复的结点
+        ListNode prev = dummyNode;
+        //下一个非重复的结点
+        ListNode curr = head;
+
+        //遍历每个结点
+        while(curr != null){
+            //对于重复结点就一直跳到下一个结点，然后再去重新迭代
+            if (curr.next != null && curr.val  == curr.next.val){
+                int val = curr.val;
+                while (curr != null && curr.val == val) {
+                    curr = curr.next;
+                }
+                //遍历到表尾
+                if (curr == null){
+                    prev.next = curr;
+                }
+            }else{  //只有curr不是重复结点才能进行连接
+                prev.next = curr;
+                prev = curr;
+                if (curr != null){
+                    curr = curr.next;
+                }
+            }
+        }
+        return dummyNode.next;
+    }
 }
