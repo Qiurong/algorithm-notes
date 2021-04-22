@@ -45,6 +45,7 @@
 * [234. 回文链表](./List/palindrome_linked_list.java)
 * [138. 复制带随机指针的链表](./List/copy_list_with_random_pointer.java)
 * [147. 对链表进行插入排序](./List/insertion_sort_list.java)
+* [链表总结笔记](./List/ListOperationTemplate.md)
 
 ### 栈和队列
 
