@@ -76,10 +76,10 @@ public class remove_duplicates_from_sorted_list_ii {
 
         //遍历每个结点
         while(curr != null){
+            int currval = curr.val;
             //对于重复结点就一直跳到下一个结点，然后再去重新迭代
-            if (curr.next != null && curr.val  == curr.next.val){
-                int val = curr.val;
-                while (curr != null && curr.val == val) {
+            if (curr.next != null && curr.next.val  == currval){
+                while (curr != null && curr.val == currval) {
                     curr = curr.next;
                 }
                 //遍历到表尾
@@ -89,9 +89,7 @@ public class remove_duplicates_from_sorted_list_ii {
             }else{  //只有curr不是重复结点才能进行连接
                 prev.next = curr;
                 prev = curr;
-                if (curr != null){
-                    curr = curr.next;
-                }
+                curr = curr.next;
             }
         }
         return dummyNode.next;

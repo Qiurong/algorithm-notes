@@ -1,5 +1,7 @@
 package List;
 
+import sun.plugin.viewer.LifeCycleManager;
+
 /**
  * @description:
  * @author: Qr
@@ -47,5 +49,31 @@ public class remove_duplicates_from_sorted_list {
             }
         }
         return  head;
+    }
+
+
+    public ListNode deleteDuplicates_updated(ListNode head){
+        if (head == null || head.next == null){
+            return head;
+        }
+        ListNode dummyNode = new ListNode(0);
+        dummyNode.next = head;
+        //上一个合法节点
+        ListNode prev = dummyNode;
+        //下一个合法结点
+        ListNode curr = head;
+
+        //prev链接到最后重复一个结点
+        while (curr != null) {
+            int currVal = curr.val;
+            //重复结点链接到最后一个
+            while (curr.next != null && curr.next.val == currVal){
+                curr = curr.next;
+            }
+            prev.next = curr;
+            prev = prev.next;
+            curr = curr.next;
+        }
+        return dummyNode.next;
     }
 }
