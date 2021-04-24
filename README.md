@@ -47,6 +47,7 @@
 * [147. 对链表进行插入排序](./List/insertion_sort_list.java)
 * [链表总结笔记](./List/ListOperationTemplate.md)
 * [剑指22. 链表中倒数第k个节点](./List/getKthFromEnd.java)
+* [61. 旋转链表](./List/rotate_list.java)
 
 ### 栈和队列
 
