@@ -50,6 +50,7 @@
 * [61. 旋转链表](./List/rotate_list.java)
 * [19. 删除链表的倒数第 N 个结点](./List/remove_nth_node_from_end_of_list.java)
 * [2. 两数相加](./List/add_two_numbers.java)
+* [445. 两数相加 II](./List/add_two_numbers_ii.java)
 
 ### 栈和队列
 
