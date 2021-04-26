@@ -14,6 +14,23 @@ public void getLength(ListNode head){
 }
 ```
 
+### 反转链表
+
+```java
+//用两个指针prev和curr来进行逆转，同时在逆转的过程中需要保存暂时变量下一个结点next
+public ListNode reverseList(ListNode head) {
+    ListNode prev = null;
+    ListNode curr = head;
+    while (curr != null) {
+        ListNode next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+```
+
 ### 快慢指针
 
 #### 获取中点
