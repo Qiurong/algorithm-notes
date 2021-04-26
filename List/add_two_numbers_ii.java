@@ -1,5 +1,7 @@
 package List;
 
+import java.util.Stack;
+
 /**
  * @description: 445. 两数相加 II
  * @author: Qr
@@ -61,11 +63,10 @@ public class add_two_numbers_ii {
 
     }
 
-
-    public ListNode reverseList(ListNode head){
+    public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;
-        while(curr != null){
+        while (curr != null) {
             ListNode next = curr.next;
             curr.next = prev;
             prev = curr;
@@ -73,4 +74,39 @@ public class add_two_numbers_ii {
         }
         return prev;
     }
+
+    //不用链表反转。  逆序想到用栈！！来做
+    public ListNode addTwoNumbers_advanced(ListNode l1, ListNode l2){
+        Stack<Integer> l1Stack = new Stack<>();
+        Stack<Integer> l2Stack = new Stack<>();
+        int carry = 0;
+        while (l1 != null){
+            l1Stack.push(l1.val);
+            l1 = l1.next;
+        }
+        while (l2 != null){
+            l2Stack.push(l2.val);
+            l2 = l2.next;
+        }
+
+        ListNode head = null;     //结果链表的头指针
+        while (!l1Stack.isEmpty() || !l2Stack.isEmpty() || carry != 0){
+            int currVal = carry;
+            if (!l1Stack.isEmpty()){
+                currVal += l1Stack.pop();
+            }
+            if (!l2Stack.isEmpty()){
+                currVal += l2Stack.pop();
+            }
+            carry = currVal / 10;
+            currVal = currVal % 10;
+            ListNode node = new ListNode(currVal);
+            //这里逆序 链接 链表是第一遍没写出来的点
+            node.next = head;
+            head = node;
+        }
+        return head;
+    }
+
+
 }
