@@ -49,6 +49,7 @@
 * [剑指22. 链表中倒数第k个节点](./List/getKthFromEnd.java)
 * [61. 旋转链表](./List/rotate_list.java)
 * [19. 删除链表的倒数第 N 个结点](./List/remove_nth_node_from_end_of_list.java)
+* [2. 两数相加](./List/add_two_numbers.java)
 
 ### 栈和队列
 
