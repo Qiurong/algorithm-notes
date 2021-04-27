@@ -63,6 +63,10 @@
 * [232. 用栈实现队列](./StackAndQueue/implement_queue_using_stacks.java)
 * [542. 01 矩阵](./StackAndQueue/matrix_01.java)
 
+### 数组
+
+- [1. 两数之和](./array/two_sum.java)
+
 ### 位操作
 
 - [136. 只出现一次的数字](./bitOperation/single_number.java)
