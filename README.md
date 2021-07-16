@@ -146,6 +146,7 @@
 - [17. 电话号码的字母组合](backtrack/letter_combinations_of_a_phone_number.java)
 - [131. 分割回文串](backtrack/palindrome_partitioning.java)
 - [93. 复原 IP 地址](backtrack/restoreIpAddresses.java)
+- [22. 括号生成](backtrack/generate_Parenthesis.java)
 
 ### 牛客网
 
