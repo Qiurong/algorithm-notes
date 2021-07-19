@@ -68,6 +68,7 @@
 
 - [1. 两数之和](./array/two_sum.java)
 - [15. 三数之和](./array/Threesum.java)
+- [31. 下一个排列](./array/next_permutation.java)
 
 ### 字符串
 
