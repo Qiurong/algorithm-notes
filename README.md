@@ -22,6 +22,7 @@
 * [94. 二叉树的中序遍历](./binary_tree/binary_tree_inorder_traversal.java)
 * [145. 二叉树的后序遍历](./binary_tree/binary_tree_postorder_traversal.java)
 * [102. 二叉树的层序遍历](./binary_tree/binary_tree_level_order_traversal.java)
+* [101. 对称二叉树](./binary_tree/symmetric_tree.java)
 
 ### 二叉搜索树
 
