@@ -108,7 +108,7 @@
 
 ### 动态规划
 
-- [动态规划笔记](dynamic_programming/dyProgramming.java)
+- [动态规划笔记](dynamic_programming/dyProgramming.md)
 
 - [120. 三角形最小路径和](dynamic_programming/triangle.java)
 - [64. 最小路径和](dynamic_programming/minimum_path_sum.java)
