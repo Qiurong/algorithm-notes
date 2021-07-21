@@ -52,6 +52,7 @@
 * [19. 删除链表的倒数第 N 个结点](./List/remove_nth_node_from_end_of_list.java)
 * [2. 两数相加](./List/add_two_numbers.java)
 * [445. 两数相加 II](./List/add_two_numbers_ii.java)
+* [160. 相交链表](./List/intersection_of_two_linked_lists.java)
 
 ### 栈和队列
 
