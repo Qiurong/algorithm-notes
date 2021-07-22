@@ -74,6 +74,7 @@
 - [31. 下一个排列](./array/next_permutation.java)
 - [169. 多数元素](./array/majority_Element.java)
 - [283. 移动零](./array/move_zeroes.java)
+- [448. 找到所有数组中消失的数字](./array/find_all_numbers_disappeared.java)
 
 ### 字符串
 
@@ -84,6 +85,8 @@
 - [136. 只出现一次的数字](./bitOperation/single_number.java)
 - [137. 只出现一次的数字 II](bitOperation/single_number_ii.java)
 - [260. 只出现一次的数字 III](bitOperation/single_number_iii.java)
+- [338. 比特位计数](bitOperation/counting_bits.java)
+- [461. 汉明距离](bitOperation/hamming_distance.java)
 
 ### 图
 
