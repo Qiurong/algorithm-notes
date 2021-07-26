@@ -24,6 +24,7 @@
 * [102. 二叉树的层序遍历](./binary_tree/binary_tree_level_order_traversal.java)
 * [101. 对称二叉树](./binary_tree/symmetric_tree.java)
 * [226. 翻转二叉树](./binary_tree/invert_Tree.java)
+* [617. 合并二叉树](./binary_tree/merge_two_binary_trees.java)
 
 ### 二叉搜索树
 
