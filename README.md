@@ -25,6 +25,7 @@
 * [101. 对称二叉树](./binary_tree/symmetric_tree.java)
 * [226. 翻转二叉树](./binary_tree/invert_Tree.java)
 * [617. 合并二叉树](./binary_tree/merge_two_binary_trees.java)
+* [543. 二叉树的直径](./binary_tree/diameter_of_binary_tree.java)
 
 ### 二叉搜索树
 
