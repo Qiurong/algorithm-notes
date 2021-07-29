@@ -186,6 +186,8 @@
 - [146. LRU 缓存机制](interview-questions/lru_cache.java)
 - [数组中平方数不同的个数](interview-questions/num_of_diff_square.java)
 - [456. 132 模式](interview-questions/pattern_132.java)
+- [54. 螺旋矩阵](interview-questions/spiral_matrix.java)
+- [42. 接雨水](interview-questions/trapping_rain_water.java)
 
 ### 堆
 
