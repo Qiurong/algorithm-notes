@@ -188,6 +188,7 @@
 - [456. 132 模式](interview-questions/pattern_132.java)
 - [54. 螺旋矩阵](interview-questions/spiral_matrix.java)
 - [42. 接雨水](interview-questions/trapping_rain_water.java)
+- [560. 和为K的子数组](interview-questions/subarray_sum_equals_k.java)
 
 ### 堆
 
