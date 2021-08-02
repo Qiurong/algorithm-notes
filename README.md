@@ -188,6 +188,7 @@
 - [54. 螺旋矩阵](interview-questions/spiral_matrix.java)
 - [42. 接雨水](interview-questions/trapping_rain_water.java)
 - [560. 和为K的子数组](interview-questions/subarray_sum_equals_k.java)
+- [23. 合并K个升序链表](interview-questions/merge_k_sorted_lists.java)
 
 ### 堆
 
