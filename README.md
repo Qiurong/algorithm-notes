@@ -190,6 +190,7 @@
 - [560. 和为K的子数组](interview-questions/subarray_sum_equals_k.java)
 - [224. 基本计算器](interview-questions/basic_calculator.java)
 - [227. 基本计算器 II](interview-questions/basic_calculator_ii.java)
+- [143. 重排链表](interview-questions/reorder_list.java)
 
 ### 堆
 
