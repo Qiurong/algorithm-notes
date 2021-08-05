@@ -191,6 +191,7 @@
 - [224. 基本计算器](interview-questions/basic_calculator.java)
 - [227. 基本计算器 II](interview-questions/basic_calculator_ii.java)
 - [143. 重排链表](interview-questions/reorder_list.java)
+- [718. 最长重复子数组](interview-questions/maximum_length_of_repeated_subarray.java)
 
 ### 堆
 
