@@ -1,6 +1,5 @@
 package interview_questions;
 
-import java.util.DuplicateFormatFlagsException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -141,4 +140,106 @@ public class lru_cache {
     public DoubleLinkedNode deleteTail(){
         return delNode(dummyTail.prev);
     }
+
+
+
+    //第二次写
+
+    //---------------------------------------------------------------------
+
+    //主要是要记录最近最少使用，即在put时吧队列尾部元素移除; get时吧对应元素移动到队列首部
+    // O(1)获取到队列尾部的数据结构只有双向链表，但如何O(1) 时间获取到这个节点在链表中的位置想错了，
+    // 不应该是获取到在链表中的位置，而是直接O(1)获取到这个节点。
+    // k,v不是用hashmap来存，而是node来存，hashmap用来存key,node
+    class lru_cache_ii {
+        class DLinkedNode{
+            int key;
+            int value;
+            DLinkedNode prev;
+            DLinkedNode next;
+
+            public DLinkedNode(int key, int value){
+                this.key = key;
+                this.value = value;
+            }
+        }
+
+        private DLinkedNode dummyHead;
+        private DLinkedNode dummyTail;
+        private HashMap<Integer,DLinkedNode> cache;
+        private int size;
+        private int capacity;
+
+        public lru_cache_ii(int capacity) {
+            this.capacity = capacity;
+            size = 0;
+            cache = new HashMap<>(capacity);
+            dummyHead = new DLinkedNode(0,0);
+            dummyTail = new DLinkedNode(0,0);
+            dummyHead.next = dummyTail;
+            dummyHead.prev = dummyTail;
+            dummyTail.next = dummyHead;
+            dummyTail.prev = dummyHead;
+        }
+
+
+        public int get(int key) {
+            if (cache.containsKey(key)){
+                DLinkedNode valNode = cache.get(key);
+                disConnect(valNode);
+                insertHead(valNode);
+                return valNode.value;
+            }else {
+                return -1;
+            }
+        }
+
+        public void put(int key, int value) {
+            if (cache.containsKey(key)){
+                DLinkedNode originNode = cache.get(key);
+                originNode.value = value;
+                disConnect(originNode);
+                insertHead(originNode);
+                return;
+            }
+            DLinkedNode newNode = new DLinkedNode(key,value);
+            if (size < capacity){
+                insertHead(newNode);
+                size++;
+            }else {
+                DLinkedNode delNode = delLast();
+                cache.remove(delNode.key);
+                insertHead(newNode);
+            }
+            cache.put(key,newNode);
+        }
+
+
+        //吧链表中存在的节点从链表中断开出来
+        private void disConnect(DLinkedNode node){
+            DLinkedNode prevNode = node.prev;
+            DLinkedNode nextNode = node.next;
+            prevNode.next = nextNode;
+            nextNode.prev = prevNode;
+        }
+
+        //吧一个队列中不存在的节点加入表头
+        private void insertHead(DLinkedNode node){
+            DLinkedNode first = dummyHead.next;
+            dummyHead.next = node;
+            node.prev = dummyHead;
+            first.prev = node;
+            node.next = first;
+        }
+
+
+        private DLinkedNode delLast(){
+            DLinkedNode last = dummyTail.prev;
+            last.prev.next = dummyTail;
+            dummyTail.prev = last.prev;
+            return last;
+        }
+
+    }
+
 }
