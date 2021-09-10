@@ -78,6 +78,8 @@
 - [283. 移动零](./array/move_zeroes.java)
 - [448. 找到所有数组中消失的数字](./array/find_all_numbers_disappeared.java)
 - [560. 和为 K 的子数组](./array/subarraySum_k.java)
+- [45. 跳跃游戏 II](./array/jumpGameii.java)
+- [跳跃游戏 II二维数组版](./array/jumpGameAdvanced.java)
 
 ### 字符串
 
