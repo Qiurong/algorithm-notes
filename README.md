@@ -169,7 +169,6 @@
 ### 牛客网
 
 - [输入输出注意事项](nowcoder/inputTest.java)
-
 - [进制转换](nowcoder/huawei/base_conversion.java)
 - [质数因子](nowcoder/huawei/prime_factor.java)
 - [合并表记录](nowcoder/huawei/merge_list.java)
