@@ -80,6 +80,7 @@
 - [560. 和为 K 的子数组](./array/subarraySum_k.java)
 - [45. 跳跃游戏 II](./array/jumpGameii.java)
 - [跳跃游戏 II二维数组版](./array/jumpGameAdvanced.java)
+- [1827. 最少操作使数组递增](./array/minOPsTOIncr.java)
 
 ### 字符串
 
