@@ -213,3 +213,31 @@
 - [121. 买卖股票的最佳时机](stock_problems/best_time_i.java)
 - [122. 买卖股票的最佳时机 II](stock_problems/best_time_ii.java)
 - [123. 买卖股票的最佳时机 III](stock_problems/best_time_iii.java)
+
+### 代码随想录
+
+#### 数组 
+
+> [](./programmerCarl/array/.java)
+
+- [704. 二分查找](./programmerCarl/array/binary_search.java)
+
+#### 链表
+
+#### 哈希表
+
+#### 字符串
+
+####  双指针
+
+#### 栈与队列
+
+#### 二叉树
+
+#### 回溯
+
+#### 贪心算法
+
+#### 动态规划
+
+#### 单调栈
