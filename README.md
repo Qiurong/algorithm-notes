@@ -221,6 +221,7 @@
 > [](./programmerCarl/array/.java)
 
 - [704. 二分查找](./programmerCarl/array/binary_search.java)
+- [406. 根据身高重建队列](./programmerCarl/array/queue_reconstruction_by_height.java)
 
 #### 链表
 
