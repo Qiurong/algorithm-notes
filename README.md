@@ -222,6 +222,7 @@
 
 - [704. 二分查找](./programmerCarl/array/binary_search.java)
 - [406. 根据身高重建队列](./programmerCarl/array/queue_reconstruction_by_height.java)
+- [35. 搜索插入位置](./programmerCarl/array/search_insert_position.java)
 
 #### 链表
 
