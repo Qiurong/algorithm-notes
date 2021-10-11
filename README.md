@@ -226,6 +226,7 @@
 - [406. 根据身高重建队列](./programmerCarl/array/queue_reconstruction_by_height.java)
 - [35. 搜索插入位置](./programmerCarl/array/search_insert_position.java)
 - [34. 在排序数组中查找元素的第一个和最后一个位置](./programmerCarl/array/find_first_and_last_position_of_element_in_sorted_array.java)
+- [27. 移除元素](./programmerCarl/array/remove_element.java)
 
 #### 链表
 
