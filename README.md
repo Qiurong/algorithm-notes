@@ -230,6 +230,7 @@
 - [26. 删除有序数组中的重复项](./programmerCarl/array/removeDuplicates.java)
 - [283. 移动零](./programmerCarl/array/move_zeroes.java)
 - [844. 比较含退格的字符串](./programmerCarl/array/backspace_string_compare.java)
+- [977. 有序数组的平方](./programmerCarl/array/squares_of_a_sorted_array.java)
 
 #### 链表
 
