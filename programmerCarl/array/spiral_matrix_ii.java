@@ -133,4 +133,38 @@ public class spiral_matrix_ii {
         pos[1] = y + 1;
         return num;
     }
+
+    //用记录四个边界点的方法来做，可以把空间复杂度降到O(1)
+    //按层来遍历， 还是左闭右闭的原则
+    public int[][] generateMatrix_optimized(int n){
+        int[][] generated = new int[n][n];
+        int num = 1;
+        //边界
+        int left = 0;
+        int right = n - 1;
+        int top = 0;
+        int bottom = n - 1;
+        while (left <= right && top <= bottom){
+            for (int j = left; j <= right; j++) {
+                generated[top][j] = num++;
+            }
+            for (int i = top + 1; i <= bottom; i++) {
+                generated[i][right] = num++;
+            }
+            //一行或者一列的矩阵 向右和向下的操作就遍历完成
+            if (left < right && top < bottom){
+                for (int j = right - 1; j >= left; j--) {
+                    generated[bottom][j] = num++;
+                }
+                for (int i = bottom - 1; i >= top + 1; i--) {
+                    generated[i][left] = num++;
+                }
+            }
+            left++;
+            right--;
+            top++;
+            bottom--;
+        }
+        return generated;
+    }
 }
