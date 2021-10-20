@@ -241,6 +241,10 @@
 
 #### 哈希表
 
+> [](./programmerCarl/hash/.java)
+
+- [242. 有效的字母异位词](./programmerCarl/hash/vali_anagram.java)
+
 #### 字符串
 
 ####  双指针
