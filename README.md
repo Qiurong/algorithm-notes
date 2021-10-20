@@ -239,9 +239,9 @@
 
 #### 链表
 
-> [](./programmerCarl/hash/.java)
+> [](./programmerCarl/list/.java)
 
-- [206. 反转链表](./programmerCarl/hash/reverse_linked_list.java)
+- [206. 反转链表](./programmerCarl/list/reverse_linked_list.java)
 
 #### 哈希表
 
