@@ -243,6 +243,7 @@
 
 - [206. 反转链表](./programmerCarl/list/reverse_linked_list.java)
 - [25.k个一组反转链表](./programmerCarl/list/reverseKGroup.java)
+- [203. 移除链表元素](./programmerCarl/list/remove_linked_list_elements.java)
 
 #### 哈希表
 
